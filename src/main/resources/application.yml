@@ -1,4 +1,4 @@
-mybatis.type-aliases-package: com.cloudhearing.uploader.entity
+mybatis.type-aliases-package: com.cloudhearing.asws3api.entity
 #Mapper.xml所在的位置
 mybatis.mapper-locations: classpath:/mybatis/mapper/*.xml
 mybatis.config-location: classpath:/mybatis/mybatis-config.xml
