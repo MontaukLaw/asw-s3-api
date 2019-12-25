@@ -23,12 +23,12 @@ public class AwsS3ApiApplicationTests {
     public void contextLoads() {
     }
 
-    @Test
+    //@Test
     public void test2() {
         System.out.println(Regions.DEFAULT_REGION);
     }
 
-    @Test
+    //@Test
     //测试通过, 成功获得了bucket的名字
     public void test3() {
         //System.out.println(getBucket("xxxx"));
@@ -46,7 +46,7 @@ public class AwsS3ApiApplicationTests {
 
     }
 
-    @Test
+    //@Test
     public void test1() {
         //System.out.println("xxxx");
         Bucket b = createBucket("xxxxxx");

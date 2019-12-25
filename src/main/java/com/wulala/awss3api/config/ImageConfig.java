@@ -13,6 +13,9 @@ public class ImageConfig {
     @Value("${image.folder.linux}")
     private String linuxImageFolder = "";
 
+    @Value("${aws.bucket.name}")
+    private String bucketName = "";
+
     public String getImageFolder() {
 
         Properties props = System.getProperties();
@@ -20,10 +23,16 @@ public class ImageConfig {
         //String osArch = props.getProperty("os.arch"); //操作系统构架
         //String osVersion = props.getProperty("os.version"); //操作系统版本
         //System.out.println(osName);
-        if (osName.indexOf("Windows") > -1) {
+        if (osName.contains("Windows")) {
             return winImageFolder;
         } else {
             return linuxImageFolder;
         }
     }
+
+    public String getBucketName() {
+        return bucketName;
+    }
+
+
 }

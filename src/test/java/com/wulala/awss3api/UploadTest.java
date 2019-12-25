@@ -6,11 +6,14 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.Bucket;
+import com.wulala.awss3api.service.UploadService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.List;
@@ -19,7 +22,14 @@ import java.util.List;
 @SpringBootTest
 public class UploadTest {
 
+    @Resource
+    UploadService uploadServer;
+
     @Test
+    public void contextLoads() {
+    }
+
+    //@Test
     public void upload2S3Test() {
 
         AmazonS3 amazonS3 = AmazonS3ClientBuilder.standard()
@@ -46,4 +56,18 @@ public class UploadTest {
         System.out.println("Done!");
 
     }
+
+    //@Test
+    public void testGetACL() {
+        //uploadServer.getObjectACL();
+
+    }
+
+    //@Test
+    public void testSetACL() {
+        String objStr = "dsssss/a7644aa905b450a9911e3372d59a7909.jpg";
+        //uploadServer.putObjectPublicAccess(objStr);
+        //uploadServer.getObjectACL(objStr);
+    }
+
 }

@@ -11,6 +11,18 @@ public class BaseController {
 
     protected Logger logger = Logger.getLogger(this.getClass());
 
+    protected JsonMsg feedbackJson(Object object,String msg) {
+        JsonMsg jsonMsg = new JsonMsg();
+        if (object != null) {
+            jsonMsg.setObj(object);
+            jsonMsg.setMsg(msg);
+        } else {
+            jsonMsg.setSuccess(false);
+            jsonMsg.setMsg("Error");
+        }
+        return jsonMsg;
+    }
+
     protected JsonMsg feedbackJson(Object object) {
         JsonMsg jsonMsg = new JsonMsg();
         if (object != null) {
